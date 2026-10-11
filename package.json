@@ -1,0 +1,13 @@
+{
+  "name": "week3-procurement-reconciliation",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Synthetic Week 3 procurement reconciliation: China order to prep-center receipt",
+  "scripts": {
+    "generate": "node scripts/generate-fixtures.mjs",
+    "build": "node scripts/build-reconciliation.mjs",
+    "verify": "node scripts/verify.mjs",
+    "test:external": "node scripts/verify-external-fixture.mjs",
+    "test": "node scripts/generate-fixtures.mjs && node scripts/build-reconciliation.mjs && node scripts/verify.mjs && node scripts/verify-external-fixture.mjs"
+  }
+}

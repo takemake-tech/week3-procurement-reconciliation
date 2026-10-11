@@ -1,0 +1,362 @@
+[
+  {
+    "id": "E01",
+    "at": "2026-09-22T09:10:00+03:00",
+    "from": "factory-bottle@yunhe.test",
+    "to": "buyer@takemake.test",
+    "subject": "PO-CN-2608: бутылки",
+    "body": "Подтверждаем условия по термобутылкам.\n[PO_LINE] po=PO-CN-2608 sku=TM-BTL-750-SAND qty=600 unit_cny=18 volume_m3=8",
+    "type": "person"
+  },
+  {
+    "id": "E02",
+    "at": "2026-09-22T10:20:00+03:00",
+    "from": "factory-organizer@ningbo.test",
+    "to": "buyer@takemake.test",
+    "subject": "PO-CN-2608: органайзеры",
+    "body": "Подтверждаем условия по органайзерам.\n[PO_LINE] po=PO-CN-2608 sku=TM-ORG-3-GREY qty=400 unit_cny=22 volume_m3=6",
+    "type": "person"
+  },
+  {
+    "id": "E03",
+    "at": "2026-09-23T11:00:00+03:00",
+    "from": "buyer@takemake.test",
+    "to": "procurement@takemake.test",
+    "subject": "Дополнительные услуги по PO-CN-2608",
+    "body": "Разбивка по услугам согласована с фабриками.\n[SERVICE] po=PO-CN-2608 sku=TM-BTL-750-SAND type=labels amount_cny=720 status=confirmed\n[SERVICE] po=PO-CN-2608 sku=TM-ORG-3-GREY type=labels amount_cny=360 status=confirmed",
+    "type": "person"
+  },
+  {
+    "id": "E04",
+    "at": "2026-09-24T15:20:00+03:00",
+    "from": "finance@takemake.test",
+    "to": "procurement@takemake.test",
+    "subject": "Статус PI-2608",
+    "body": "По проформе нет третьего платежа: фактические исполнения и курсы коллеги зафиксировали в рабочем чате.",
+    "type": "person"
+  },
+  {
+    "id": "E05",
+    "at": "2026-09-25T09:30:00+03:00",
+    "from": "buyer@takemake.test",
+    "to": "procurement@takemake.test",
+    "subject": "Packing list PO-CN-2608",
+    "body": "Фабрики передали packing list.\n[SHIPMENT] shipment=SH-2608 sku=TM-BTL-750-SAND qty=600 status=confirmed\n[SHIPMENT] shipment=SH-2608 sku=TM-ORG-3-GREY qty=400 status=confirmed",
+    "type": "person"
+  },
+  {
+    "id": "E06",
+    "at": "2026-09-25T12:00:00+03:00",
+    "from": "buyer@takemake.test",
+    "to": "procurement@takemake.test",
+    "subject": "Упаковка и услуга байера",
+    "body": "Услуги по PO-CN-2608.\n[SERVICE] po=PO-CN-2608 sku=TM-BTL-750-SAND type=packing amount_cny=480 status=confirmed\n[SERVICE] po=PO-CN-2608 sku=TM-ORG-3-GREY type=packing amount_cny=200 status=confirmed\n[SERVICE] po=PO-CN-2608 sku=TM-BTL-750-SAND type=buyer amount_cny=600 status=confirmed\n[SERVICE] po=PO-CN-2608 sku=TM-ORG-3-GREY type=buyer amount_cny=400 status=confirmed",
+    "type": "person"
+  },
+  {
+    "id": "E07",
+    "at": "2026-09-28T13:20:00+03:00",
+    "from": "forwarder@skybridge.test",
+    "to": "logistics@takemake.test",
+    "subject": "Международная доставка PO-CN-2608",
+    "body": "SkyBridge направил расчёт в рабочий чат: там зафиксировано фактическое банковское списание по перевозке.",
+    "type": "person"
+  },
+  {
+    "id": "E08",
+    "at": "2026-10-01T10:30:00+03:00",
+    "from": "broker@customsline.test",
+    "to": "logistics@takemake.test",
+    "subject": "CU-2608: таможня и брокер",
+    "body": "Счёт за таможенное оформление и брокера.\n[COST] doc=CU-2608 stage=customs amount_rub=49000 allocation=goods_value status=confirmed",
+    "type": "person"
+  },
+  {
+    "id": "E09",
+    "at": "2026-10-08T16:10:00+03:00",
+    "from": "prep@prepport.test",
+    "to": "procurement@takemake.test",
+    "subject": "PC-2608: услуги приёмки",
+    "body": "Счёт prep-center за приёмку, маркировку и размещение.\n[COST] doc=PC-2608 stage=fulfillment amount_rub=18000 allocation=ordered_qty status=confirmed",
+    "type": "person"
+  },
+  {
+    "id": "E10",
+    "at": "2026-10-10T14:20:00+03:00",
+    "from": "prep@prepport.test",
+    "to": "procurement@takemake.test",
+    "subject": "Акт приёмки RC-2608",
+    "body": "Подписанный акт фактической приёмки.\n[RECEIPT] receipt=RC-2608 sku=TM-BTL-750-SAND physical=600 saleable=594 quarantine=6 status=observed\n[RECEIPT] receipt=RC-2608 sku=TM-ORG-3-GREY physical=398 saleable=398 quarantine=0 status=observed",
+    "type": "person"
+  },
+  {
+    "id": "E11",
+    "at": "2026-10-11T08:40:00+03:00",
+    "from": "prep@prepport.test",
+    "to": "procurement@takemake.test",
+    "subject": "Смета на переэтикетировку",
+    "body": "Шесть бутылок можно переэтикетировать.\n[COST] doc=PC-RL-2608 stage=fulfillment amount_rub=2400 allocation=ordered_qty status=unapproved\n[ACTION] action=ACT-RELABEL category=today recipient=PrepPort due=2026-10-12T16:00:00+03:00 status=open title=approve_relabeling",
+    "type": "person"
+  },
+  {
+    "id": "E12",
+    "at": "2026-10-11T09:10:00+03:00",
+    "from": "prep@prepport.test",
+    "to": "procurement@takemake.test",
+    "subject": "Детальный акт и фото коробов",
+    "body": "Подписанный детальный акт должен был быть передан вчера, но его нет.\n[ACTION] action=ACT-RECEIPT-ACT category=overdue recipient=PrepPort due=2026-10-10T18:00:00+03:00 status=open title=request_signed_receipt_act",
+    "type": "person"
+  },
+  {
+    "id": "E13",
+    "at": "2026-10-06T12:30:00+03:00",
+    "from": "buyer@takemake.test",
+    "to": "procurement@takemake.test",
+    "subject": "Недостача органайзеров",
+    "body": "Байер должен вернуться с суммой и кредит-нотой.",
+    "type": "person"
+  },
+  {
+    "id": "E14",
+    "at": "2026-10-09T17:15:00+03:00",
+    "from": "broker@customsline.test",
+    "to": "procurement@takemake.test",
+    "subject": "Таможенный счёт: требуется подтверждение",
+    "body": "Нужно срочно подтвердить счёт CU-2608.\n[ACTION] action=ACT-CUSTOMS category=today recipient=CustomsLine due=2026-10-12T12:00:00+03:00 status=open title=confirm_customs_invoice",
+    "type": "person"
+  },
+  {
+    "id": "E15",
+    "at": "2026-10-07T09:00:00+03:00",
+    "from": "procurement@takemake.test",
+    "to": "team@takemake.test",
+    "subject": "Сверка PO-CN-2608",
+    "body": "Сверка поставки назначена на 13.10 в 10:00.\n[MEETING] action=MEET-RECON recipient=Procurement due=2026-10-13T10:00:00+03:00 status=open title=reconcile_shipment",
+    "type": "person"
+  },
+  {
+    "id": "E16",
+    "at": "2026-10-10T16:00:00+03:00",
+    "from": "procurement@takemake.test",
+    "to": "team@takemake.test",
+    "subject": "Перенос сверки PO-CN-2608",
+    "body": "Подтверждаю перенос: новый слот сверки 15.10 в 15:00.\n[MEETING] action=MEET-RECON recipient=Procurement due=2026-10-15T15:00:00+03:00 status=open title=reconcile_shipment",
+    "type": "person"
+  },
+  {
+    "id": "E17",
+    "at": "2026-10-01T08:00:00+03:00",
+    "from": "digest@takemake.test",
+    "to": "procurement@takemake.test",
+    "subject": "Автоматическая рассылка",
+    "body": "Дайджест без персонального действия.",
+    "type": "newsletter"
+  },
+  {
+    "id": "E18",
+    "at": "2026-10-02T09:00:00+03:00",
+    "from": "colleague@takemake.test",
+    "to": "procurement@takemake.test",
+    "subject": "Рабочее уточнение",
+    "body": "Короткое обсуждение без нового обязательства.",
+    "type": "person"
+  },
+  {
+    "id": "E19",
+    "at": "2026-10-03T10:00:00+03:00",
+    "from": "colleague@takemake.test",
+    "to": "procurement@takemake.test",
+    "subject": "Рабочее уточнение",
+    "body": "Короткое обсуждение без нового обязательства.",
+    "type": "person"
+  },
+  {
+    "id": "E20",
+    "at": "2026-10-04T11:00:00+03:00",
+    "from": "colleague@takemake.test",
+    "to": "procurement@takemake.test",
+    "subject": "Рабочее уточнение",
+    "body": "Короткое обсуждение без нового обязательства.",
+    "type": "person"
+  },
+  {
+    "id": "E21",
+    "at": "2026-10-05T12:00:00+03:00",
+    "from": "colleague@takemake.test",
+    "to": "procurement@takemake.test",
+    "subject": "Рабочее уточнение",
+    "body": "Короткое обсуждение без нового обязательства.",
+    "type": "person"
+  },
+  {
+    "id": "E22",
+    "at": "2026-10-06T13:00:00+03:00",
+    "from": "digest@takemake.test",
+    "to": "procurement@takemake.test",
+    "subject": "Автоматическая рассылка",
+    "body": "Дайджест без персонального действия.",
+    "type": "newsletter"
+  },
+  {
+    "id": "E23",
+    "at": "2026-10-07T14:00:00+03:00",
+    "from": "colleague@takemake.test",
+    "to": "procurement@takemake.test",
+    "subject": "Рабочее уточнение",
+    "body": "Короткое обсуждение без нового обязательства.",
+    "type": "person"
+  },
+  {
+    "id": "E24",
+    "at": "2026-10-08T15:00:00+03:00",
+    "from": "colleague@takemake.test",
+    "to": "procurement@takemake.test",
+    "subject": "Рабочее уточнение",
+    "body": "Короткое обсуждение без нового обязательства.",
+    "type": "person"
+  },
+  {
+    "id": "E25",
+    "at": "2026-10-09T08:00:00+03:00",
+    "from": "colleague@takemake.test",
+    "to": "procurement@takemake.test",
+    "subject": "Рабочее уточнение",
+    "body": "Короткое обсуждение без нового обязательства.",
+    "type": "person"
+  },
+  {
+    "id": "E26",
+    "at": "2026-10-10T09:00:00+03:00",
+    "from": "colleague@takemake.test",
+    "to": "procurement@takemake.test",
+    "subject": "Рабочее уточнение",
+    "body": "Короткое обсуждение без нового обязательства.",
+    "type": "person"
+  },
+  {
+    "id": "E27",
+    "at": "2026-10-11T10:00:00+03:00",
+    "from": "digest@takemake.test",
+    "to": "procurement@takemake.test",
+    "subject": "Автоматическая рассылка",
+    "body": "Дайджест без персонального действия.",
+    "type": "newsletter"
+  },
+  {
+    "id": "E28",
+    "at": "2026-10-01T11:00:00+03:00",
+    "from": "colleague@takemake.test",
+    "to": "procurement@takemake.test",
+    "subject": "Рабочее уточнение",
+    "body": "Короткое обсуждение без нового обязательства.",
+    "type": "person"
+  },
+  {
+    "id": "E29",
+    "at": "2026-10-02T12:00:00+03:00",
+    "from": "colleague@takemake.test",
+    "to": "procurement@takemake.test",
+    "subject": "Рабочее уточнение",
+    "body": "Короткое обсуждение без нового обязательства.",
+    "type": "person"
+  },
+  {
+    "id": "E30",
+    "at": "2026-10-03T13:00:00+03:00",
+    "from": "colleague@takemake.test",
+    "to": "procurement@takemake.test",
+    "subject": "Рабочее уточнение",
+    "body": "Короткое обсуждение без нового обязательства.",
+    "type": "person"
+  },
+  {
+    "id": "E31",
+    "at": "2026-10-04T14:00:00+03:00",
+    "from": "colleague@takemake.test",
+    "to": "procurement@takemake.test",
+    "subject": "Рабочее уточнение",
+    "body": "Короткое обсуждение без нового обязательства.",
+    "type": "person"
+  },
+  {
+    "id": "E32",
+    "at": "2026-10-05T15:00:00+03:00",
+    "from": "digest@takemake.test",
+    "to": "procurement@takemake.test",
+    "subject": "Автоматическая рассылка",
+    "body": "Дайджест без персонального действия.",
+    "type": "newsletter"
+  },
+  {
+    "id": "E33",
+    "at": "2026-10-06T08:00:00+03:00",
+    "from": "colleague@takemake.test",
+    "to": "procurement@takemake.test",
+    "subject": "Рабочее уточнение",
+    "body": "Короткое обсуждение без нового обязательства.",
+    "type": "person"
+  },
+  {
+    "id": "E34",
+    "at": "2026-10-07T09:00:00+03:00",
+    "from": "colleague@takemake.test",
+    "to": "procurement@takemake.test",
+    "subject": "Рабочее уточнение",
+    "body": "Короткое обсуждение без нового обязательства.",
+    "type": "person"
+  },
+  {
+    "id": "E35",
+    "at": "2026-10-08T10:00:00+03:00",
+    "from": "colleague@takemake.test",
+    "to": "procurement@takemake.test",
+    "subject": "Рабочее уточнение",
+    "body": "Короткое обсуждение без нового обязательства.",
+    "type": "person"
+  },
+  {
+    "id": "E36",
+    "at": "2026-10-09T11:00:00+03:00",
+    "from": "colleague@takemake.test",
+    "to": "procurement@takemake.test",
+    "subject": "Рабочее уточнение",
+    "body": "Короткое обсуждение без нового обязательства.",
+    "type": "person"
+  },
+  {
+    "id": "E37",
+    "at": "2026-10-10T12:00:00+03:00",
+    "from": "digest@takemake.test",
+    "to": "procurement@takemake.test",
+    "subject": "Автоматическая рассылка",
+    "body": "Дайджест без персонального действия.",
+    "type": "newsletter"
+  },
+  {
+    "id": "E38",
+    "at": "2026-10-11T13:00:00+03:00",
+    "from": "colleague@takemake.test",
+    "to": "procurement@takemake.test",
+    "subject": "Рабочее уточнение",
+    "body": "Короткое обсуждение без нового обязательства.",
+    "type": "person"
+  },
+  {
+    "id": "E39",
+    "at": "2026-10-01T14:00:00+03:00",
+    "from": "colleague@takemake.test",
+    "to": "procurement@takemake.test",
+    "subject": "Рабочее уточнение",
+    "body": "Короткое обсуждение без нового обязательства.",
+    "type": "person"
+  },
+  {
+    "id": "E40",
+    "at": "2026-10-02T15:00:00+03:00",
+    "from": "colleague@takemake.test",
+    "to": "procurement@takemake.test",
+    "subject": "Рабочее уточнение",
+    "body": "Короткое обсуждение без нового обязательства.",
+    "type": "person"
+  }
+]

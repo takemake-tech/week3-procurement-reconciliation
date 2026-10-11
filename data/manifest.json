@@ -1,0 +1,7 @@
+{
+  "case_id": "PO-CN-2608-synthetic",
+  "reference_day": "2026-10-12",
+  "time_zone": "Europe/Moscow",
+  "utc_offset": "+03:00",
+  "relative_due_rule": "Фраза «к концу следующей недели» означает пятницу следующей рабочей недели в 18:00 по МСК."
+}

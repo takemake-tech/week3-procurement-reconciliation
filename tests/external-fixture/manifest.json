@@ -1,0 +1,7 @@
+{
+  "case_id": "PO-QD-2711-independent-fixture",
+  "reference_day": "2027-11-05",
+  "time_zone": "Europe/Moscow",
+  "utc_offset": "+03:00",
+  "relative_due_rule": "Фраза «к концу следующей недели» означает пятницу следующей рабочей недели в 18:00 по МСК."
+}

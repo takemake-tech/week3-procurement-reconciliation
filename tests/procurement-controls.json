@@ -1,0 +1,143 @@
+{
+  "reference_day": "2026-10-12",
+  "facts": [
+    {
+      "id": "PC-01",
+      "expectation": "Из 1 000 заказанных и оплаченных единиц физически приняты 998; недостача двух единиц есть только у TM-ORG-3-GREY.",
+      "assert": {
+        "kind": "quantities",
+        "sku": "TM-ORG-3-GREY",
+        "ordered": 400,
+        "paid": 400,
+        "shipped": 400,
+        "physical": 398,
+        "saleable": 398,
+        "shortage": 2
+      }
+    },
+    {
+      "id": "PC-02",
+      "expectation": "Китайская часть оплачена двумя подтверждёнными строками по разным датам и курсам: 14 000 CNY × 12,40 ₽ и 8 360 CNY × 12,70 ₽. Сумма — 279 772 ₽; простой средний курс 12,55 ₽ здесь неприменим.",
+      "assert": {
+        "kind": "currency_conversions",
+        "payment_cny": 22360,
+        "payment_rub_kopecks": 27977200,
+        "documents_count": 2,
+        "simple_average_rub_kopecks": 28061800,
+        "events": [
+          {
+            "document_id": "PAY-2608-A",
+            "kind": "payment",
+            "stage": "china",
+            "currency": "CNY",
+            "amount": 14000,
+            "fx_rub_per_unit": 12.4,
+            "rate_at": "2026-09-23",
+            "rub_kopecks": 17360000,
+            "source_id": "C01"
+          },
+          {
+            "document_id": "PAY-2608-B",
+            "kind": "payment",
+            "stage": "china",
+            "currency": "CNY",
+            "amount": 8360,
+            "fx_rub_per_unit": 12.7,
+            "rate_at": "2026-09-24",
+            "rub_kopecks": 10617200,
+            "source_id": "C02"
+          }
+        ]
+      }
+    },
+    {
+      "id": "PC-03",
+      "expectation": "Международная доставка оплачена в долларах: 900 USD × 92,40 ₽ = 83 160 ₽. Она учтена один раз, а общая подтверждённая себестоимость партии равна 429 932 ₽.",
+      "assert": {
+        "kind": "cost_total",
+        "rub_kopecks": 42993200,
+        "freight_rub_kopecks": 8316000,
+        "freight_conversion": {
+          "document_id": "FR-2608",
+          "kind": "cost",
+          "stage": "freight",
+          "currency": "USD",
+          "amount": 900,
+          "fx_rub_per_unit": 92.4,
+          "rate_at": "2026-09-29",
+          "rub_kopecks": 8316000,
+          "source_id": "C15"
+        }
+      }
+    },
+    {
+      "id": "PC-04",
+      "expectation": "Шесть бутылок находятся в карантине, а не являются недостачей; неутверждённые 2 400 ₽ на переэтикетировку не входят в себестоимость.",
+      "assert": {
+        "kind": "quarantine_and_unapproved",
+        "sku": "TM-BTL-750-SAND",
+        "physical": 600,
+        "quarantine": 6,
+        "saleable": 594,
+        "unapproved_rub_kopecks": 240000
+      }
+    },
+    {
+      "id": "PC-05",
+      "expectation": "Обещание компенсации двух органайзеров без суммы и кредит-ноты остаётся спорным и не уменьшает себестоимость.",
+      "assert": {
+        "kind": "claim",
+        "status": "self_reported",
+        "sku": "TM-ORG-3-GREY",
+        "quantity": 2
+      }
+    },
+    {
+      "id": "PC-06",
+      "expectation": "Себестоимость доступного остатка учитывает разные курсы фактических оплат: 409,05 ₽ за бутылку и 469,75 ₽ за органайзер при хранении расчёта в копейках.",
+      "assert": {
+        "kind": "landed_cost",
+        "lines": {
+          "TM-BTL-750-SAND": {
+            "total_rub_kopecks": 24297327,
+            "saleable": 594,
+            "unit_display": "409.05"
+          },
+          "TM-ORG-3-GREY": {
+            "total_rub_kopecks": 18695873,
+            "saleable": 398,
+            "unit_display": "469.75"
+          }
+        }
+      }
+    },
+    {
+      "id": "PC-07",
+      "expectation": "В дневном плане таможенный счёт отмечен решённым, а сверка перенесена с 13.10 10:00 на 15.10 15:00.",
+      "assert": {
+        "kind": "plan",
+        "resolved_action": "ACT-CUSTOMS",
+        "meeting_due": "2026-10-15T15:00:00+03:00",
+        "meeting_source_ids": ["E15", "E16"]
+      }
+    },
+    {
+      "id": "PC-08",
+      "expectation": "Фраза «к концу следующей недели» превращена в 16.10 18:00 МСК, а у каждой строки плана есть источник и двухстрочный черновик.",
+      "assert": {
+        "kind": "plan_quality",
+        "action_id": "ACT-CLAIM",
+        "due": "2026-10-16T18:00:00+03:00",
+        "source_id": "C16"
+      }
+    },
+    {
+      "id": "PC-09",
+      "expectation": "Даты, валюты и курсы для двух китайских платежей и USD-фрахта находятся в естественных сообщениях чата, а не в [PAYMENT] или [COST] маркерах.",
+      "assert": {
+        "kind": "natural_currency_sources",
+        "source_ids": ["C01", "C02", "C15"]
+      }
+    }
+  ]
+}

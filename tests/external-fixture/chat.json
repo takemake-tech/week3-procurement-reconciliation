@@ -1,0 +1,58 @@
+[
+  {
+    "id": "EXT-C01",
+    "at": "2027-10-20T16:35:00+03:00",
+    "author": "Лера, закупки",
+    "text": "По PO-QD-2711 закрыли первый транш: PAY-QD-2711-A — 2 000 CNY, списано 20.10 по курсу 11,60 ₽ за CNY. Банковский файл прикрепила.",
+    "type": "person"
+  },
+  {
+    "id": "EXT-C02",
+    "at": "2027-11-03T12:10:00+03:00",
+    "author": "Dock Seven",
+    "text": "Предварительная смета на повторную проверку чайника — 950 ₽; согласования пока нет.\n[COST] doc=QC-QD-2711 stage=fulfillment amount_rub=950 allocation=ordered_qty status=unapproved",
+    "type": "person"
+  },
+  {
+    "id": "EXT-C03",
+    "at": "2027-11-04T09:40:00+03:00",
+    "author": "Лера, закупки",
+    "text": "Исправление: кредит-нота не получена, поэтому задачу надо открыть снова.\n[ACTION] action=ACT-CREDIT-2711 category=overdue recipient=Buyer due=2027-11-03T18:00:00+03:00 status=open title=request_credit_note",
+    "type": "person"
+  },
+  {
+    "id": "EXT-C04",
+    "at": "2027-11-03T13:00:00+03:00",
+    "author": "Лера, закупки",
+    "text": "Поставщик обещает заменить два органайзера, но документа на возврат или зачет пока нет. Разберусь с этим к концу следующей недели.\n[CLAIM] claim=CL-QD-2711 sku=STORAGE-CUBE-LILAC qty=2 status=self_reported\n[ACTION] action=ACT-CLAIM-2711 recipient=Buyer due=next_week_friday status=open title=request_credit_note",
+    "type": "person"
+  },
+  {
+    "id": "EXT-C05",
+    "at": "2027-11-04T10:05:00+03:00",
+    "author": "Складской бот",
+    "text": "Автоуведомление: маршрут QD-2711 обновлён.",
+    "type": "bot"
+  },
+  {
+    "id": "EXT-C06",
+    "at": "2027-11-04T10:15:00+03:00",
+    "author": "Олег, финансы",
+    "text": "Вторая строка PI-QD-2711: PAY-QD-2711-B — 2 055 CNY, списано 21.10 по курсу 12,10 ₽ за CNY. После обеда сверю с проформой.",
+    "type": "person"
+  },
+  {
+    "id": "EXT-C07",
+    "at": "2027-10-21T09:00:00+03:00",
+    "author": "Лера, закупки",
+    "text": "Повторно пересылаю PAY-QD-2711-A: это тот же первый транш, нового списания нет.",
+    "type": "person"
+  },
+  {
+    "id": "EXT-C08",
+    "at": "2027-10-29T14:20:00+03:00",
+    "author": "Carrier East",
+    "text": "По PO-QD-2711 FR-QD-2711 за международный участок: $ 300, списано 29.10 по курсу 79,30 ₽ за USD. Распределяем по объёму.",
+    "type": "person"
+  }
+]

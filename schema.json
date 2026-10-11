@@ -1,0 +1,27 @@
+{
+  "description": "Schema guide for the synthetic procurement reconciliation case.",
+  "entities": {
+    "source_event": ["id", "kind", "at", "author_or_sender", "text", "source_link"],
+    "po_line": ["po_id", "sku", "ordered_qty", "unit_cny", "volume_m3", "source_id"],
+    "payment": ["document_id", "po_id", "currency", "amount", "fx_rub_per_unit", "rate_at", "rub_kopecks", "status", "source_id"],
+    "service": ["po_id", "sku", "service_type", "amount_cny", "status", "source_id"],
+    "shipment_line": ["shipment_id", "sku", "quantity", "source_id"],
+    "receipt_line": ["receipt_id", "sku", "physical_qty", "saleable_qty", "quarantine_qty", "source_id"],
+    "cost": ["document_id", "stage", "currency", "amount", "fx_rub_per_unit", "rate_at", "rub_kopecks", "allocation", "status", "source_id"],
+    "currency_conversion": ["document_id", "kind", "stage", "currency", "amount", "fx_rub_per_unit", "rate_at", "rub_kopecks", "source_id"],
+    "claim": ["claim_id", "sku", "quantity", "status", "source_id"],
+    "action": ["action_id", "recipient", "due", "status", "source_id"]
+  },
+  "fact_statuses": {
+    "confirmed": "supported by a document or signed receipt",
+    "observed": "physical fact seen at receipt",
+    "self_reported": "claim or promise without a confirming document",
+    "unapproved": "quotation or cost not yet approved",
+    "duplicate": "repeated reference to an already counted document"
+  },
+  "allocation_rules": {
+    "volume": "by ordered cubic volume",
+    "goods_value": "by ordered factory-goods value",
+    "ordered_qty": "by ordered quantity"
+  }
+}

@@ -1,0 +1,101 @@
+[
+  {
+    "id": "EXT-E01",
+    "at": "2027-10-18T09:15:00+03:00",
+    "from": "nova-factory@fabric.test",
+    "to": "purchasing@demo.test",
+    "subject": "Спецификация для партии PO-QD-2711",
+    "body": "Подтверждаем выпуск дорожных чайников в октябрьской партии.\n[PO_LINE] po=PO-QD-2711 sku=KETTLE-TRAVEL-ORANGE qty=75 unit_cny=31 volume_m3=3.5",
+    "type": "person"
+  },
+  {
+    "id": "EXT-E02",
+    "at": "2027-10-18T10:05:00+03:00",
+    "from": "lumen-supply@fabric.test",
+    "to": "purchasing@demo.test",
+    "subject": "Вторая строка спецификации PO-QD-2711",
+    "body": "Складывающиеся органайзеры готовы в количестве по согласованному листу.\n[PO_LINE] po=PO-QD-2711 sku=STORAGE-CUBE-LILAC qty=130 unit_cny=12 volume_m3=1.5",
+    "type": "person"
+  },
+  {
+    "id": "EXT-E03",
+    "at": "2027-10-19T11:30:00+03:00",
+    "from": "buyer-north@agency.test",
+    "to": "purchasing@demo.test",
+    "subject": "Согласованные работы фабрик",
+    "body": "В цену заказа добавлены гравировка чайников и маркировка органайзеров.\n[SERVICE] po=PO-QD-2711 sku=KETTLE-TRAVEL-ORANGE type=engraving amount_cny=105 status=confirmed\n[SERVICE] po=PO-QD-2711 sku=STORAGE-CUBE-LILAC type=labels amount_cny=65 status=confirmed",
+    "type": "person"
+  },
+  {
+    "id": "EXT-E04",
+    "at": "2027-10-20T16:20:00+03:00",
+    "from": "bank@demo.test",
+    "to": "purchasing@demo.test",
+    "subject": "Исполнение платёжного поручения QD-2711",
+    "body": "Платёж по проформе прошёл несколькими банковскими строками. Финансы оставили даты и курсы исполнения в рабочем чате.",
+    "type": "person"
+  },
+  {
+    "id": "EXT-E05",
+    "at": "2027-10-25T12:00:00+03:00",
+    "from": "buyer-north@agency.test",
+    "to": "purchasing@demo.test",
+    "subject": "Packing list партии QD-2711",
+    "body": "Обе позиции переданы перевозчику в полном количестве.\n[SHIPMENT] shipment=SH-QD-2711 sku=KETTLE-TRAVEL-ORANGE qty=75 status=confirmed\n[SHIPMENT] shipment=SH-QD-2711 sku=STORAGE-CUBE-LILAC qty=130 status=confirmed",
+    "type": "person"
+  },
+  {
+    "id": "EXT-E06",
+    "at": "2027-10-29T14:10:00+03:00",
+    "from": "carrier-east@logistics.test",
+    "to": "purchasing@demo.test",
+    "subject": "Счёт за перевозку LTL-2711",
+    "body": "Выставлен счёт за международную перевозку сборного груза. Фактическое списание и курс логист подтвердил в рабочем чате.",
+    "type": "person"
+  },
+  {
+    "id": "EXT-E07",
+    "at": "2027-10-31T09:20:00+03:00",
+    "from": "broker-south@customs.test",
+    "to": "purchasing@demo.test",
+    "subject": "Таможенные платежи по QD-2711",
+    "body": "Подтверждён счёт за выпуск декларации и услуги брокера.\n[COST] doc=CUS-QD-2711 stage=customs amount_rub=17050 allocation=goods_value status=confirmed",
+    "type": "person"
+  },
+  {
+    "id": "EXT-E08",
+    "at": "2027-11-02T15:45:00+03:00",
+    "from": "dock-seven@warehouse.test",
+    "to": "purchasing@demo.test",
+    "subject": "Приёмка и размещение QD-2711",
+    "body": "Счёт за разгрузку, пересчёт и размещение принят к оплате.\n[COST] doc=WH-QD-2711 stage=fulfillment amount_rub=6150 allocation=ordered_qty status=confirmed",
+    "type": "person"
+  },
+  {
+    "id": "EXT-E09",
+    "at": "2027-11-03T10:25:00+03:00",
+    "from": "dock-seven@warehouse.test",
+    "to": "purchasing@demo.test",
+    "subject": "Финальный акт по QD-2711",
+    "body": "После пересчёта один чайник оставлен на проверке, а двух органайзеров в поставке нет.\n[RECEIPT] receipt=RC-QD-2711 sku=KETTLE-TRAVEL-ORANGE physical=75 saleable=74 quarantine=1 status=observed\n[RECEIPT] receipt=RC-QD-2711 sku=STORAGE-CUBE-LILAC physical=128 saleable=128 quarantine=0 status=observed",
+    "type": "person"
+  },
+  {
+    "id": "EXT-E10",
+    "at": "2027-11-01T11:00:00+03:00",
+    "from": "buyer-north@agency.test",
+    "to": "purchasing@demo.test",
+    "subject": "Статус кредит-ноты",
+    "body": "По прежним данным вопрос кредит-ноты был закрыт.\n[ACTION] action=ACT-CREDIT-2711 category=resolved recipient=Buyer due=2027-11-01T18:00:00+03:00 status=closed title=request_credit_note",
+    "type": "person"
+  },
+  {
+    "id": "EXT-E11",
+    "at": "2027-11-04T08:00:00+03:00",
+    "from": "digest@demo.test",
+    "to": "purchasing@demo.test",
+    "subject": "Еженедельный дайджест",
+    "body": "Автоматическая подборка новостей без действия.",
+    "type": "newsletter"
+  }
+]
